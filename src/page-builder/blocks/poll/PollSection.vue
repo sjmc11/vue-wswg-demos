@@ -1,7 +1,7 @@
 <template>
   <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
     <div v-if="heading || description" class="mb-3 max-w-prose">
-      <h2 v-if="heading" class="text-xl font-bold text-gray-900">
+      <h2 v-if="heading" class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
         {{ heading }}
       </h2>
 
@@ -17,7 +17,7 @@
         <div class="flex items-center gap-4">
           <label
             for="Option1"
-            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-sm"
+            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-xs"
           >
             <div
               class="absolute inset-y-0 left-0 rounded bg-gray-100"
@@ -29,7 +29,7 @@
                 type="radio"
                 id="Option1"
                 name="Poll1"
-                class="size-5 border-gray-300 shadow-sm"
+                class="size-5 border-gray-300 shadow-xs"
               />
 
               <span class="font-medium text-gray-900"> Option 1 </span>
@@ -42,7 +42,7 @@
         <div class="flex items-center gap-4">
           <label
             for="Option2"
-            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-sm"
+            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-xs"
           >
             <div
               class="absolute inset-y-0 left-0 rounded bg-gray-100"
@@ -54,7 +54,7 @@
                 type="radio"
                 id="Option2"
                 name="Poll1"
-                class="size-5 border-gray-300 shadow-sm"
+                class="size-5 border-gray-300 shadow-xs"
               />
 
               <span class="font-medium text-gray-900"> Option 2 </span>
@@ -67,7 +67,7 @@
         <div class="flex items-center gap-4">
           <label
             for="Option3"
-            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-sm"
+            class="relative block flex-1 overflow-hidden rounded border border-gray-300 px-4 py-2 shadow-xs"
           >
             <div
               class="absolute inset-y-0 left-0 rounded bg-gray-100"
@@ -79,7 +79,7 @@
                 type="radio"
                 id="Option3"
                 name="Poll1"
-                class="size-5 border-gray-300 shadow-sm"
+                class="size-5 border-gray-300 shadow-xs"
               />
 
               <span class="font-medium text-gray-900"> Option 3 </span>

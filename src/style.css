@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@source "../index.html";
+@source "./**/*.{vue,js,ts,jsx,tsx}";
+@source "../node_modules/vue-wswg-editor/src/**/*.{vue,js,ts,jsx,tsx}";
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

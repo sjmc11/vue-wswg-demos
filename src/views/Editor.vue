@@ -40,3 +40,8 @@ import { WswgJsonEditor } from 'vue-wswg-editor';
 const isEditing = ref<Boolean>(true);
 const pageData = {};
 </script>
+
+
+<style lang="scss">
+// @import 'vue-wswg-editor/style.css';
+</style>

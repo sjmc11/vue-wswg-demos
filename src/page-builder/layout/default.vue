@@ -1,6 +1,6 @@
 <template>
   <main class="default-page-layout">
-    <div id="app-header" class="border-b">
+    <div id="app-header" class="border-b border-gray-300">
       <div
         class="max-w-5xl mx-auto flex items-center px-5 py-7 justify-between"
       >
