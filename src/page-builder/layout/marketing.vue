@@ -1,5 +1,8 @@
 <template>
   <main class="marketing-page-layout">
+    <div class="bg-amber-100 text-amber-700 p-5 text-center font-medium">
+      <p>Marketing Page Layout</p>
+    </div>
     <main>
       <p>
         <slot name="default">

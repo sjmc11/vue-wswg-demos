@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/SaveChangesModal.vue';
 </script>
 
 <template>
-  <div>
     <RouterView />
-  </div>
 </template>

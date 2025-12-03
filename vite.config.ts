@@ -7,46 +7,22 @@ import tailwindcss from '@tailwindcss/vite';
 import { vueWswgEditorPlugin } from 'vue-wswg-editor/vite-plugin';
 
 /**
- * Plugin to strip Tailwind utilities from vue-wswg-editor CSS
- * Keeps only custom component styles to prevent v3/v4 conflicts
- * Tailwind v4 will generate utilities by scanning library source files
+ * Plugin to wrap vue-wswg-editor CSS in a layer to prevent conflicts
+ * Keeps all library styles (including Tailwind utilities) but isolates them
+ * so Tailwind v4 utilities take precedence when both exist
  */
-function stripTailwindFromLibraryCSS() {
+function wrapLibraryCSSInLayer() {
   return {
-    name: 'strip-tailwind-from-library-css',
+    name: 'wrap-library-css-in-layer',
     enforce: 'pre' as const,
     transform(code: string, id: string) {
       // Only process vue-wswg-editor's style.css (whether imported in main.ts or Editor.vue)
       if (id.includes('vue-wswg-editor') && id.endsWith('style.css')) {
-        // Find where Tailwind base styles start (the universal selector with CSS variables)
-        // This marks the beginning of Tailwind v3 utilities
-        const tailwindBaseStart = code.indexOf('*,:before,:after{--tw-border-spacing-x:');
-        
-        if (tailwindBaseStart > 0) {
-          // Extract everything before Tailwind base styles
-          // This includes all custom component styles (scoped with [data-v-*] and specific classes)
-          let customStyles = code.substring(0, tailwindBaseStart);
-          
-          // Ensure we end with a complete CSS rule
-          const lastBrace = customStyles.lastIndexOf('}');
-          if (lastBrace > 0 && lastBrace < customStyles.length - 1) {
-            const afterLastBrace = customStyles.substring(lastBrace + 1).trim();
-            if (afterLastBrace.length > 0) {
-              // Remove any incomplete content after the last brace
-              customStyles = customStyles.substring(0, lastBrace + 1);
-            }
-          }
-          
-          return {
-            code: customStyles,
-            map: null,
-          };
-        }
-        
-        // If we can't find the Tailwind base marker, return empty
-        // (safer than including potentially conflicting utilities)
+        // Wrap the entire library CSS in a layer with lower priority
+        // This allows Tailwind v4 utilities to override v3 utilities when needed
+        // while still keeping all library styles available for library components
         return {
-          code: '',
+          code: `@layer vue-wswg-editor-library {\n${code}\n}`,
           map: null,
         };
       }
@@ -65,7 +41,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    stripTailwindFromLibraryCSS(),
+    wrapLibraryCSSInLayer(),
     tailwindcss(),
     vueWswgEditorPlugin({
       rootDir: '@page-builder',

@@ -11,15 +11,15 @@
         </p>
       </div>
 
-      <div class="flex flex-col gap-6 mt-9">
+      <div class="flex flex-col gap-0 mt-9">
         <details
           v-for="(faq, faqIndex) in faqs"
           :key="`faq_${faqIndex}`"
-          class="group [&amp;_summary::-webkit-details-marker]:hidden border-b-2 border-gray-800"
-          open=""
+          class="group [&amp;_summary::-webkit-details-marker]:hidden border-b border-gray-400"
+          :open="faqIndex === 0 ? true : false"
         >
           <summary
-            class="flex items-center justify-between gap-1.5 p-5 text-gray-900"
+            class="flex items-center justify-between gap-1.5 px-5 py-6 text-gray-900"
           >
             <h2 class="text-lg font-medium">
               {{ faq.question }}
@@ -76,8 +76,9 @@ defineOptions({
           placeholder: 'What is the meaning of life?',
           label: 'Question',
         }),
-        answer: createField.text({
-          maxLength: 50,
+        answer: createField.textarea({
+          rows: 7,
+          maxLength: 500,
           placeholder: 'Lorem ipsum dolor sit amet',
           label: 'Answer',
         }),
@@ -108,7 +109,7 @@ const props = withDefaults(
   {
     heading: 'Common questions answered',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-    faqs: [
+    faqs: () => [
       {
         question: 'Lorem ipsum dolor sit amet consectetur adipisicing?',
         answer:
