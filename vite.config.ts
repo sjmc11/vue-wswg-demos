@@ -14,7 +14,6 @@ export default defineConfig({
    },
    plugins: [
       vue(),
-      // wrapLibraryCSSInLayer(),
       tailwindcss(),
       vueWswgEditorPlugin({
          rootDir: "@page-builder",

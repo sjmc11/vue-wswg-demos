@@ -62,6 +62,13 @@ defineOptions({
          maxLength: 50,
          placeholder: "Enter announcement text...",
          label: "Text",
+         required: true,
+         validator: async (value) => {
+            if (value && value.length >= 50) {
+               return "Text must be less than 50 characters";
+            }
+            return true;
+         },
       }),
       margin: createField.margin({ group: undefined }),
       isDarkMode: createField.boolean({

@@ -162,6 +162,10 @@ The `WswgJsonEditor` component is used in `src/views/Editor.vue`:
 - `npm run format` - Run all checks (tscheck, prettier, lint)
 - `npm run format-fix` - Fix all formatting issues
 
+## Acknowledgments
+
+The example blocks in this demo project are based on components from [HyperUI](https://www.hyperui.dev/), a collection of free, open-source Tailwind CSS components. HyperUI provides ready-to-use UI components that speed up development, and we're grateful for their contribution to the open-source community.
+
 ## Learn More
 
 For more information about the `vue-wswg-editor` library, refer to the library's documentation and source code.
