@@ -17,5 +17,5 @@
       "src/**/*",
       // Type definitions
       "src/**/*.d.ts"
-   ],
+   ]
 }
