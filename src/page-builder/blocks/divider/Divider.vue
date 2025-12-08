@@ -1,5 +1,5 @@
 <template>
-   <div class="mx-auto max-w-5xl px-5">
+   <div class="page-container">
       <hr class="border-t-2 border-gray-200" />
    </div>
 </template>

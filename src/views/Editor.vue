@@ -41,28 +41,7 @@
          :editable="isEditing"
          defaultBlockMargin="small"
          :loading="apiStore.isLoading"
-      >
-         <template #toolbar>
-            <div class="inline-flex items-center gap-2 px-3">
-               <RouterLink
-                  to="/page"
-                  class="rounded-md border bg-zinc-50 px-2 py-1 text-xs hover:border-blue-300 hover:bg-blue-100 hover:text-blue-600"
-                  >Page renderer</RouterLink
-               >
-               <RouterLink
-                  to="/page"
-                  class="rounded-md border bg-zinc-50 px-2 py-1 text-xs hover:border-blue-300 hover:bg-blue-100 hover:text-blue-600"
-                  >View JSON</RouterLink
-               >
-               <p
-                  class="inline-flex cursor-default gap-2 rounded-md border border-amber-200 bg-amber-100 px-2 py-1 text-xs"
-               >
-                  <span>ℹ️</span>
-                  <span>Add custom toolbar elements via slot</span>
-               </p>
-            </div>
-         </template>
-      </WswgJsonEditor>
+      />
 
       <!-- Save changes modal -->
       <SaveChangesModal

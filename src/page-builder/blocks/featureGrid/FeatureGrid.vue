@@ -1,6 +1,6 @@
 <template>
-   <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-lg text-center">
+   <div class="page-container py-8">
+      <div class="mx-auto max-w-prose text-center">
          <h2 v-if="heading" class="text-xl font-bold text-gray-900">
             {{ heading }}
          </h2>
@@ -10,11 +10,11 @@
          </p>
       </div>
 
-      <div class="mt-8 grid grid-cols-3 gap-8">
+      <div class="@lg:grid-cols-2 @5xl:grid-cols-3 relative z-10 mt-8 grid grid-cols-1 gap-8">
          <div
             v-for="(feature, featureIndex) in features"
             :key="`feature_${featureIndex}`"
-            class="rounded-lg border border-gray-200 p-6"
+            class="rounded-lg border border-gray-200 bg-white p-6"
          >
             <div class="inline-flex rounded-lg bg-gray-100 p-3 text-gray-700">
                <svg

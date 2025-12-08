@@ -6,14 +6,12 @@
 
 :root {
    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-   line-height: 1.5;
    font-weight: 400;
-
-   color: #213547;
-   background-color: #ffffff;
-
    font-synthesis: none;
-   text-rendering: optimizeLegibility;
+   line-height: 1.5;
+   color: #213547;
+   background-color: #fff;
+   text-rendering: optimizelegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
@@ -23,7 +21,55 @@
 }
 
 body {
-   margin: 0;
    min-width: 320px;
    min-height: 100vh;
+   margin: 0;
+}
+
+/* Block container width management - makes block containers respect parent width instead of viewport width.
+   This is essential for editor previews with sidebars where the preview width is narrower than the browser viewport */
+
+#page-viewport {
+   width: 100%;
+   container-type: inline-size;
+   container-name: page-viewport;
+}
+
+/* Container classes for page builder - max-width adjusts based on parent container width */
+.page-container {
+   width: 100%;
+   max-width: 1200px;
+   padding-right: 1rem;
+   padding-left: 1rem;
+   margin: 0 auto;
+}
+
+@container (min-width: 0) {
+   .page-container {
+      max-width: 100%;
+   }
+}
+
+@container (min-width: 640px) {
+   .page-container {
+      max-width: 620px;
+   }
+}
+
+@container (min-width: 768px) {
+   .page-container {
+      max-width: 720px;
+   }
+}
+
+@container (min-width: 1024px) {
+   .page-container {
+      max-width: 960px;
+   }
+}
+
+@container (min-width: 1420px) {
+   .page-container {
+      max-width: 1200px;
+   }
 }

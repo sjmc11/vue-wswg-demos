@@ -1,21 +1,19 @@
 <template>
-   <section class="bg-white lg:grid lg:h-full lg:place-content-center">
-      <div
-         class="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-24 md:grid md:grid-cols-2 md:items-center md:gap-4 lg:px-8 lg:py-32"
-      >
+   <section class="lg:grid lg:h-full lg:place-content-center">
+      <div class="page-container @3xl:grid-cols-2 @3xl:items-center @3xl:py-24 grid gap-12 py-9">
          <div class="max-w-prose text-left">
-            <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h1 class="@4xl:text-5xl text-4xl font-bold text-gray-900">
                Understand user flow and
                <strong class="text-indigo-600"> increase </strong>
                conversions
             </h1>
 
-            <p class="mt-4 text-pretty text-base text-gray-700 sm:text-lg/relaxed">
+            <p class="@xl:text-lg/relaxed mt-4 text-pretty text-base text-gray-700">
                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi. Natus, provident accusamus impedit
                minima harum corporis iusto.
             </p>
 
-            <div class="mt-4 flex gap-4 sm:mt-6">
+            <div class="@xl:mt-6 mt-4 flex gap-4">
                <a
                   class="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
                   href="#"

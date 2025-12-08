@@ -1,6 +1,6 @@
 <template>
-   <div class="mx-auto max-w-5xl px-5">
-      <div class="mx-auto max-w-5xl rounded-xl bg-gray-100 p-6 md:p-12">
+   <div class="page-container">
+      <div class="@3xl:p-12 rounded-xl bg-gray-100 p-6">
          <div class="mx-auto max-w-lg text-center">
             <h2 v-if="heading" class="text-xl font-bold text-gray-900">
                {{ heading }}
@@ -11,14 +11,14 @@
             </p>
          </div>
 
-         <div class="mt-9 flex flex-col gap-0">
+         <div class="@xl:mt-9 mt-3 flex flex-col gap-0">
             <details
                v-for="(faq, faqIndex) in faqs"
                :key="`faq_${faqIndex}`"
                class="group border-b border-gray-400 [&_summary::-webkit-details-marker]:hidden"
                :open="faqIndex === 0 ? true : false"
             >
-               <summary class="flex items-center justify-between gap-1.5 px-5 py-6 text-gray-900">
+               <summary class="@xl:px-5 @xl:py-6 flex items-center justify-between gap-1.5 px-1 py-3 text-gray-900">
                   <h2 class="text-lg font-medium">
                      {{ faq.question }}
                   </h2>

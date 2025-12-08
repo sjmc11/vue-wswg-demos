@@ -1,26 +1,26 @@
 <template>
-   <div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+   <div class="page-container py-8">
       <div
          v-if="heading || description"
-         class="mb-5 md:mb-9 max-w-prose"
+         class="@md:mb-9 mb-5 max-w-prose"
          :class="{
             'text-left': textAlign === 'left',
-            'text-center mx-auto': textAlign === 'center',
-            'text-right ml-auto': textAlign === 'right',
+            'mx-auto text-center': textAlign === 'center',
+            'ml-auto text-right': textAlign === 'right',
          }"
       >
-         <h2 v-if="heading" class="text-xl md:text-3xl font-bold text-gray-900">
+         <h2 v-if="heading" class="@md:text-3xl text-xl font-bold text-gray-900">
             {{ heading }}
          </h2>
 
-         <p v-if="description" class="mt-3 text-lg text-pretty text-gray-700">
+         <p v-if="description" class="mt-3 text-pretty text-lg text-gray-700">
             {{ description }}
          </p>
       </div>
 
       <p v-if="articlesLoading" class="text-center text-gray-500">Loading articles...</p>
       <p v-if="articlesError" class="text-center text-red-500">Error loading articles: {{ articlesError.message }}</p>
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div v-else class="@xs:grid-cols-1 @md:grid-cols-2 @5xl:grid-cols-3 grid grid-cols-1 gap-5">
          <div v-for="article in articles" :key="article.id">
             <article class="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
                <img :alt="article.title" :src="article.image" class="h-56 w-full object-cover" />
@@ -44,7 +44,7 @@
 
       <div
          v-if="showViewAllLink && !articlesLoading && !articlesError"
-         class="mt-4 md:mt-9"
+         class="@md:mt-9 mt-4"
          :class="{
             'text-center': textAlign === 'center',
             'text-left': textAlign === 'left',
@@ -53,7 +53,7 @@
       >
          <a
             href="#"
-            class="py-2 px-4 bg-zinc-900 text-white rounded-md mx-auto inline-block hover:bg-zinc-800 transition-colors"
+            class="mx-auto inline-block rounded-md bg-zinc-900 px-4 py-2 text-white transition-colors hover:bg-zinc-800"
             >View all articles</a
          >
       </div>

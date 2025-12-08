@@ -1,22 +1,22 @@
 <template>
    <div class="page-preview">
       <div
-         class="page-preview-header sticky top-0 z-10 bg-zinc-800 text-white px-5 py-3 flex items-center gap-x-7 gap-y-3 flex-wrap"
+         class="page-preview-header z-40 flex flex-wrap items-center gap-x-7 gap-y-3 bg-zinc-800 px-5 py-3 text-white"
       >
-         <router-link to="/" class="text-xs bg-zinc-800 border border-zinc-700 px-3 py-2 rounded-md hover:bg-zinc-700"
+         <router-link to="/" class="rounded-md border border-zinc-700 bg-zinc-800 px-3 py-2 text-xs hover:bg-zinc-700"
             >← Back to editor</router-link
          >
          <p class="text-sm text-zinc-300">
             This is a page preview using the
-            <code class="bg-zinc-700 px-2 py-1 text-xs rounded-md mx-1">&lt;PageRenderer&gt;</code> component.
+            <code class="mx-1 rounded-md bg-zinc-700 px-2 py-1 text-xs">&lt;PageRenderer&gt;</code> component.
          </p>
       </div>
 
       <div class="page-preview-content">
          <!-- Loading state -->
-         <div v-if="apiStore.isLoading" class="flex items-center justify-center min-h-[400px]">
+         <div v-if="apiStore.isLoading" class="flex min-h-[400px] items-center justify-center">
             <div class="text-center">
-               <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-zinc-800 mb-4"></div>
+               <div class="mb-4 inline-block size-8 animate-spin rounded-full border-b-2 border-zinc-800"></div>
                <p class="text-zinc-600">Loading page...</p>
             </div>
          </div>
@@ -27,10 +27,11 @@
             :blocks="apiStore.pageData.blocks"
             :layout="apiStore.pageData?.settings?.layout"
             :settings="apiStore.pageData?.settings"
+            :with-layout="true"
          />
 
          <!-- Empty state -->
-         <div v-else class="flex items-center justify-center min-h-[400px]">
+         <div v-else class="flex min-h-[400px] items-center justify-center">
             <p class="text-zinc-500">No page data available</p>
          </div>
       </div>

@@ -17,6 +17,10 @@
    },
    "dependencies": {
       "@tailwindcss/vite": "^4.1.17",
+      "@tiptap/pm": "^3.12.1",
+      "@tiptap/starter-kit": "^3.12.1",
+      "@tiptap/vue-3": "^3.12.1",
+      "@vueuse/head": "^2.0.0",
       "pinia": "^3.0.4",
       "pinia-plugin-persistedstate": "^4.7.1",
       "tailwindcss": "^4.1.17",

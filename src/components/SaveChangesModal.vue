@@ -38,13 +38,20 @@
             <!-- Validation errors -->
             <div v-if="hasValidationErrors" class="space-y-4 py-4 md:space-y-4 md:py-6">
                <p class="mb-6 rounded-md bg-amber-500/20 px-4 py-3 text-amber-900">
-                  Please fix the following errors before saving:
+                  Please fix the following errors before saving
                </p>
-               <template v-for="(blockType, blockTypeKey) in validationResults" :key="blockTypeKey">
-                  <div v-if="!blockType.isValid" class="rounded-md border border-gray-300 p-4">
-                     <h4 class="mb-2 block text-base font-bold text-zinc-900">{{ blockType.title }}</h4>
-                     <ul class="list-inside list-disc space-y-2 text-sm text-zinc-600">
-                        <li v-for="(error, errorKey) in blockType.errors" :key="errorKey">{{ error }}</li>
+               <template v-for="(block, blockKey) in validationResults" :key="blockKey">
+                  <div v-if="!block.isValid" class="rounded-md bg-gray-100 p-4">
+                     <h4 class="mb-2 block text-base font-bold text-zinc-900">{{ block.title }}</h4>
+                     <ul class="space-y-2 text-sm text-zinc-600">
+                        <li
+                           v-for="(error, fieldLabel) in block.errors"
+                           :key="fieldLabel"
+                           class="flex items-center gap-2 overflow-hidden rounded-md border border-gray-300 bg-gray-200/50"
+                        >
+                           <span class="border-r border-gray-300 px-3 py-2 text-xs font-medium">{{ fieldLabel }}</span>
+                           <p>{{ error }}</p>
+                        </li>
                      </ul>
                   </div>
                </template>
@@ -109,7 +116,7 @@ const hasValidationErrors = computed(() => {
  * @returns void
  */
 async function validatePageContent() {
-   validationResults.value = await validateAllFields(props.pageData, "blocks");
+   validationResults.value = await validateAllFields(props.pageData);
 }
 
 onMounted(async () => {
