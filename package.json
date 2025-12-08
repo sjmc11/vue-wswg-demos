@@ -16,6 +16,7 @@
       "format-fix": "npm run tscheck && npm run prettier-fix && npm run lint-fix"
    },
    "dependencies": {
+      "@heroicons/vue": "^2.2.0",
       "@tailwindcss/vite": "^4.1.17",
       "@tiptap/pm": "^3.12.1",
       "@tiptap/starter-kit": "^3.12.1",

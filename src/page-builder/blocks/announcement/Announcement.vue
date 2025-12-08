@@ -1,11 +1,11 @@
 <template>
    <div
       v-if="!isDismissed"
-      class="flex items-center justify-between border-b px-4 py-3"
+      class="border-b py-3"
       :class="isDarkMode ? 'border-gray-800 bg-gray-800 text-gray-300' : 'border-gray-200 bg-gray-100 text-gray-900'"
    >
-      <div class="page-container">
-         <span v-if="isDismissable"> </span>
+      <div class="page-container flex items-center justify-between gap-5">
+         <span v-if="isDismissable && textAlign === 'center'"> </span>
 
          <p
             class="flex-1 font-medium"
@@ -17,30 +17,30 @@
          >
             {{ text }}
          </p>
-      </div>
-      <button
-         v-if="isDismissable"
-         type="button"
-         aria-label="Dismiss"
-         class="rounded border p-1.5 shadow-sm transition-colors"
-         :class="
-            isDarkMode
-               ? 'border-gray-700 bg-gray-700 text-gray-300 hover:bg-gray-600'
-               : 'border-gray-200 bg-gray-100 text-gray-900 hover:bg-gray-50'
-         "
-         @click="isDismissed = true"
-      >
-         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-5"
+         <button
+            v-if="isDismissable"
+            type="button"
+            aria-label="Dismiss"
+            class="rounded border p-1.5 shadow-sm transition-colors"
+            :class="
+               isDarkMode
+                  ? 'border-gray-700 bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  : 'border-gray-200 bg-gray-100 text-gray-900 hover:bg-gray-50'
+            "
+            @click="isDismissed = true"
          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
-         </svg>
-      </button>
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="size-5"
+            >
+               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
+            </svg>
+         </button>
+      </div>
    </div>
 </template>
 
