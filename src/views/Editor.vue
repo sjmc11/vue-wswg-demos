@@ -31,9 +31,9 @@
             </button>
          </div>
       </header>
-      <WswgJsonEditor
+      <WswgPageBuilder
          v-model="apiStore.pageData"
-         class="wswg-json-editor"
+         class="wswg-page-builder"
          blocksKey="blocks"
          settingsKey="settings"
          :url="`/page`"
@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import "vue-wswg-editor/style.css";
 import { ref, onMounted } from "vue";
-import { WswgJsonEditor } from "vue-wswg-editor";
+import { WswgPageBuilder } from "vue-wswg-editor";
 import SaveChangesModal from "../components/SaveChangesModal.vue";
 import { editorApiStore } from "../pinia/api";
 
@@ -93,9 +93,25 @@ function abandonChanges() {
 </script>
 
 <style scoped>
-.wswg-json-editor {
+.wswg-page-builder {
    /* 4rem is the height of the publishing bar */
    /* 1px is the border of the publishing bar */
    --editor-height: calc(100vh - 4rem - 1px);
+
+   /* Editor colors (defaults) */
+   --editor-bg-color: #6a6a6a;
+   --block-badge-color: #638ef1;
+   --block-backdrop-color: transparent;
+   --block-border-color: #638ef1;
+   --block-border-width: 4px;
+   --block-border-style: solid;
+   --partial-backdrop-color: transparent;
+   --partial-border-color: #638ef1;
+   --partial-border-width: 4px;
+   --partial-border-style: solid;
+   --margin-color: #faf6d5e0;
+   --margin-border-width: 2px;
+   --margin-border-style: dashed;
+   --margin-border-color: #cbc59c;
 }
 </style>

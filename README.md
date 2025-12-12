@@ -8,7 +8,7 @@ This demo project serves as a reference implementation for developers looking to
 
 - **Vite Plugin Configuration**: Demonstrates how to configure the `vueWswgEditorPlugin` to scan for blocks, fields, and layouts
 - **Page Builder Structure**: Shows the required `page-builder` directory structure with blocks, layouts, and field definitions
-- **Editor Integration**: Example implementation of the `WswgJsonEditor` component with state management
+- **Editor Integration**: Example implementation of the `WswgPageBuilder` component with state management
 - **Block Examples**: Multiple example blocks demonstrating different use cases
 
 ## Tech Stack
@@ -43,7 +43,7 @@ vue-wswg-demos/
 │   │       └── marketing.vue
 │   ├── components/            # Shared components
 │   ├── views/                 # Page views
-│   │   ├── Editor.vue         # Editor view with WswgJsonEditor
+│   │   ├── Editor.vue         # Editor view with WswgPageBuilder
 │   │   └── Page.vue           # Page renderer view
 │   ├── pinia/                 # State management
 │   ├── router.ts              # Vue Router configuration
@@ -130,10 +130,10 @@ Example layouts:
 
 ## Usage Example
 
-The `WswgJsonEditor` component is used in `src/views/Editor.vue`:
+The `WswgPageBuilder` component is used in `src/views/Editor.vue`:
 
 ```vue
-<WswgJsonEditor
+<WswgPageBuilder
    v-model="apiStore.pageData"
    blocksKey="blocks"
    settingsKey="settings"
@@ -146,7 +146,7 @@ The `WswgJsonEditor` component is used in `src/views/Editor.vue`:
   <template #toolbar>
     <!-- Custom toolbar content -->
   </template>
-</WswgJsonEditor>
+</WswgPageBuilder>
 ```
 
 ## Development Scripts
