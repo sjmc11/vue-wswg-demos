@@ -61,7 +61,7 @@
 import "vue-wswg-editor/style.css";
 import { ref, onMounted } from "vue";
 import { WswgPageBuilder } from "vue-wswg-editor";
-import SaveChangesModal from "../components/SaveChangesModal.vue";
+import SaveChangesModal from "../components/saveChangesModal/SaveChangesModal.vue";
 import { editorApiStore } from "../pinia/api";
 import SettingsDropdown from "../components/settingsDropdown/SettingsDropdown.vue";
 import ThemeSettingsModal from "../components/themeSettingsModal/ThemeSettingsModal.vue";

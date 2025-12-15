@@ -83,8 +83,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { validateAllFields } from "vue-wswg-editor";
-import HeroIcon from "./heroIcon/HeroIcon.vue";
-import ValidationErrorItem from "./ValidationErrorItem.vue";
+import HeroIcon from "../heroIcon/HeroIcon.vue";
+import ValidationErrorItem from "../validationErrorItem/ValidationErrorItem.vue";
 
 // Type definition matching the library's ValidationResult interface
 interface ValidationResult {
