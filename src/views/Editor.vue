@@ -4,10 +4,10 @@
          <div class="inline-flex h-16 w-full items-center gap-2 px-5 py-1">
             <div class="branding mr-auto inline-flex items-center gap-3">
                <img src="../assets/branding.png" alt="Branding" class="h-7" />
-               <span class="text-sm font-medium text-zinc-800">Vue WSWG Editor</span>
+               <SettingsDropdown label="acme-inc.com" @menu-item-click="handleMenuItemClick" />
             </div>
 
-            <!-- Auto-save status -->
+            <!-- Save/publish status -->
             <div class="text-sm text-zinc-500">
                <span v-if="apiStore.isSaving">Saving...</span>
                <span v-else-if="apiStore.error" class="text-red-600">{{ apiStore.error }}</span>
@@ -41,6 +41,7 @@
          :editable="isEditing"
          defaultBlockMargin="small"
          :loading="apiStore.isLoading"
+         :theme="apiStore.appTheme"
       />
 
       <!-- Save changes modal -->
@@ -50,6 +51,9 @@
          @close="showSaveChangesModal = false"
          @save="saveChanges"
       />
+
+      <!-- Theme settings modal -->
+      <ThemeSettingsModal v-if="showThemeSettingsModal" @close="showThemeSettingsModal = false" />
    </div>
 </template>
 
@@ -59,11 +63,13 @@ import { ref, onMounted } from "vue";
 import { WswgPageBuilder } from "vue-wswg-editor";
 import SaveChangesModal from "../components/SaveChangesModal.vue";
 import { editorApiStore } from "../pinia/api";
+import SettingsDropdown from "../components/settingsDropdown/SettingsDropdown.vue";
+import ThemeSettingsModal from "../components/themeSettingsModal/ThemeSettingsModal.vue";
 
 const apiStore = editorApiStore();
 const isEditing = ref(true);
 const showSaveChangesModal = ref(false);
-
+const showThemeSettingsModal = ref(false);
 // Load page data on mount
 onMounted(async () => {
    try {
@@ -89,6 +95,13 @@ function abandonChanges() {
    apiStore.revertChanges();
    showSaveChangesModal.value = false;
    console.log("Changes abandoned successfully");
+}
+
+// Handle menu item click
+function handleMenuItemClick(item: string) {
+   if (item === "theme-settings") {
+      showThemeSettingsModal.value = true;
+   }
 }
 </script>
 

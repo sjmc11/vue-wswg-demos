@@ -28,6 +28,7 @@
             :layout="apiStore.pageData?.settings?.layout"
             :settings="apiStore.pageData?.settings"
             :with-layout="true"
+            :theme="apiStore.appTheme"
          />
 
          <!-- Empty state -->

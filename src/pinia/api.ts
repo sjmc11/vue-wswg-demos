@@ -13,6 +13,7 @@ export const editorApiStore = defineStore(
    () => {
       // State
       const pageData = ref<PageData>({} as PageData);
+      const appTheme = ref<string | null>(null);
       const originalPageData = ref<PageData | null>(null);
       const isLoading = ref(false);
       const isSaving = ref(false);
@@ -128,6 +129,7 @@ export const editorApiStore = defineStore(
          isSaving,
          error,
          pageId,
+         appTheme,
          // Computed
          hasUnsavedChanges,
          // Actions
