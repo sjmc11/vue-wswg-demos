@@ -1,38 +1,45 @@
-# Vue WSWG Editor Starter Kit
+# Vue WSWG Editor Demo Theme
 
-This directory contains a starter kit and reference implementation for building pages with the `vue-wswg-editor` library. It includes example blocks, custom fields, and layouts that you can use as a foundation for your own page builder implementation.
+This directory contains a demo theme and reference implementation for building pages with the `vue-wswg-editor` library. It includes example blocks, custom fields, and layouts that you can use as a foundation for your own page builder implementation.
 
 ## Overview
 
-This starter kit is extracted from the core blocks, custom fields, and basic layout examples used in the vue-wswg-editor demos project. It serves as a reference implementation and starting point for developers building pages using the vue-wswg-editor library in their projects.
+This theme is extracted from the core blocks, custom fields, and basic layout examples used in the vue-wswg-editor demos project. It serves as a reference implementation and starting point for developers building pages using the vue-wswg-editor library in their projects.
 
-The UI components in this starter kit are based on [HyperUI](https://www.hyperui.dev/), a collection of free, open-source Tailwind CSS components. HyperUI provides ready-to-use components that require no installation or configuration, making it perfect for rapid development.
+The UI components in this theme are based on [HyperUI](https://www.hyperui.dev/), a collection of free, open-source Tailwind CSS components. HyperUI provides ready-to-use components that require no installation or configuration, making it perfect for rapid development.
 
 ## Structure
 
 ```
-page-builder/
-├── blocks/          # Example block components
+wswg-demo-theme/
+├── theme.config.js      # Theme configuration and metadata
+├── thumbnail.jpg        # Theme preview thumbnail
+├── blocks/              # Block components
 │   ├── announcement/
 │   ├── articleFeed/
+│   ├── callBooking/
 │   ├── divider/
 │   ├── faqSection/
 │   ├── featureGrid/
 │   ├── hero/
 │   ├── heroImage/
 │   ├── ImageText/
-│   └── poll/
-├── fields/          # Custom field components
-│   └── rich-text/   # Rich text editor field using TipTap
-└── layout/          # Layout components
+│   ├── poll/
+│   └── pricing/
+├── fields/              # Custom field components
+│   └── rich-text/       # Rich text editor field using TipTap
+└── layout/              # Layout components
     ├── default.vue
     ├── landingPage.vue
-    └── partials/    # Reusable layout partials
+    └── partials/        # Reusable layout partials
+        ├── AppFooter.vue
+        └── appHeader/
+            └── AppHeader.vue
 ```
 
 ## Installation
 
-This starter kit does not include a `package.json` file. All dependencies should be installed in your parent project. Use the following command to install all required packages:
+This theme does not include a `package.json` file. All dependencies should be installed in your parent project. Use the following command to install all required packages:
 
 ```bash
 npm install vue@^3.5.25 vue-wswg-editor @tiptap/vue-3@^3.12.1 @tiptap/starter-kit@^3.12.1 @tiptap/pm@^3.12.1 @tiptap/core@^3.12.1 @heroicons/vue@^2.2.0 @vueuse/head@^2.0.0
@@ -40,7 +47,7 @@ npm install vue@^3.5.25 vue-wswg-editor @tiptap/vue-3@^3.12.1 @tiptap/starter-ki
 
 ## Required Packages
 
-The following packages are used in this starter kit:
+The following packages are used in this theme:
 
 ### Core Dependencies
 
@@ -64,17 +71,19 @@ The following packages are used in this starter kit:
 
 ## Blocks Included
 
-This starter kit includes the following example blocks:
+This theme includes the following blocks:
 
 - **Announcement** - Banner-style announcement block
 - **Article Feed** - Display a feed of articles
+- **Call Booking** - Section for scheduling calls or appointments
 - **Divider** - Visual divider with customizable styling
 - **FAQ Section** - Frequently asked questions with expandable items
 - **Feature Grid** - Grid layout for displaying features with icons
 - **Hero** - Hero section with heading and description
 - **Hero Image** - Hero section with background image
 - **Image Text** - Image and text content block with rich text support
-- **Poll Section** - Interactive poll/voting block
+- **Poll** - Interactive poll/voting block
+- **Pricing** - Pricing table section for plans and subscriptions
 
 ## Custom Fields
 
@@ -93,14 +102,24 @@ A custom rich text editor field component using TipTap:
 
 ## Usage
 
-1. Copy this `page-builder` directory to your project's `src/` directory
+1. Copy this `wswg-demo-theme` directory to your project's page-builder themes directory
 2. Install the required packages using the command above
 3. Configure your Vite plugin to point to this directory (see vue-wswg-editor documentation)
 4. Customize blocks, fields, and layouts to match your project's needs
 
 ## Configuration
 
-This starter kit does not include:
+The `theme.config.js` file contains theme metadata:
+
+- **title** - Theme display name
+- **description** - Theme description
+- **version** - Theme version number
+- **author** - Theme author name
+- **authorWebsite** - Author's website URL
+- **tags** - Tags for categorization
+- **license** - License information
+
+This theme does not include:
 
 - `package.json` - Dependencies should be managed in your parent project
 - TypeScript configuration - Should be configured in your parent project
@@ -134,4 +153,4 @@ For more information on using vue-wswg-editor, see:
 
 ## License
 
-This starter kit follows the same license as the vue-wswg-editor library.
+This theme follows the same license as the vue-wswg-editor library.

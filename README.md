@@ -1,6 +1,6 @@
 # Vue WSWG Editor Demo
 
-This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 TypeScript project. It showcases the integration of the WSWG (Web Studio Web Generator) page builder editor, including the required Vite plugin configuration and the necessary project structure.
+This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 TypeScript project. It showcases the integration of the WSWG page builder editor, including the required Vite plugin configuration and the necessary project structure.
 
 ## Purpose
 
@@ -27,28 +27,41 @@ This demo project serves as a reference implementation for developers looking to
 ```
 vue-wswg-demos/
 ├── src/
-│   ├── page-builder/          # Required directory for vue-wswg-editor
-│   │   ├── blocks/            # Page builder blocks
-│   │   │   ├── announcement/
-│   │   │   ├── articleFeed/
-│   │   │   ├── divider/
-│   │   │   ├── faqSection/
-│   │   │   ├── featureGrid/
-│   │   │   ├── hero/
-│   │   │   ├── heroImage/
-│   │   │   ├── ImageText/
-│   │   │   └── poll/
-│   │   └── layout/            # Page layouts
-│   │       ├── default.vue
-│   │       └── marketing.vue
-│   ├── components/            # Shared components
-│   ├── views/                 # Page views
-│   │   ├── Editor.vue         # Editor view with WswgPageBuilder
-│   │   └── Page.vue           # Page renderer view
-│   ├── pinia/                 # State management
-│   ├── router.ts              # Vue Router configuration
-│   └── main.ts                # Application entry point
-└── vite.config.ts             # Vite configuration with plugin
+│   ├── page-builder/              # Required directory for vue-wswg-editor
+│   │   ├── your-theme/            # Theme directory (main demo theme)
+│   │   │   ├── blocks/            # Page builder blocks
+│   │   │   │   ├── announcement/
+│   │   │   │   ├── articleFeed/
+│   │   │   │   ├── callBooking/
+│   │   │   │   ├── divider/
+│   │   │   │   ├── faqSection/
+│   │   │   │   ├── featureGrid/
+│   │   │   │   ├── hero/
+│   │   │   │   ├── heroImage/
+│   │   │   │   ├── ImageText/
+│   │   │   │   ├── poll/
+│   │   │   │   └── pricing/
+│   │   │   ├── fields/            # Custom field components
+│   │   │   │   └── rich-text/
+│   │   │   ├── layout/            # Page layouts
+│   │   │   │   ├── default.vue
+│   │   │   │   ├── landingPage.vue
+│   │   │   │   └── partials/
+│   │   │   ├── theme.config.js    # Theme configuration
+│   │   │   └── thumbnail.jpg      # Theme thumbnail
+│   │   └── another-theme/         # Additional theme example
+│   │       ├── blocks/
+│   │       ├── layout/
+│   │       ├── theme.config.js
+│   │       └── thumbnail.jpg
+│   ├── components/                # Shared components
+│   ├── views/                     # Page views
+│   │   ├── Editor.vue             # Editor view with WswgPageBuilder
+│   │   └── Page.vue               # Page renderer view
+│   ├── pinia/                     # State management
+│   ├── router.ts                  # Vue Router configuration
+│   └── main.ts                    # Application entry point
+└── vite.config.ts                 # Vite configuration with plugin
 ```
 
 ## Setup
@@ -104,29 +117,43 @@ The plugin scans the `@page-builder` directory (aliased to `./src/page-builder`)
 
 ## Page Builder Directory
 
-The `src/page-builder` directory is required for the library to function. It must contain:
+The `src/page-builder` directory is required for the library to function. It contains theme directories, each with its own blocks, layouts, fields, and configuration.
+
+### Theme Structure
+
+Each theme directory contains:
+
+```
+theme-name/
+  ├── blocks/            # Page builder blocks
+  │   └── hero/
+  │       ├── Hero.vue       # Block component
+  │       ├── fields.ts      # Field definitions (optional)
+  │       └── thumbnail.png  # Block thumbnail (optional)
+  ├── fields/            # Custom field components (optional)
+  │   └── rich-text/
+  │       └── RichTextField.vue
+  ├── layout/            # Page layouts
+  │   ├── default.vue
+  │   └── partials/      # Reusable layout partials
+  ├── theme.config.js    # Theme configuration
+  └── thumbnail.jpg      # Theme thumbnail for selection UI
+```
 
 ### Blocks
 
-Blocks are Vue components located in `blocks/` subdirectories. Each block can optionally have a `fields.ts` file that defines the block's editable fields.
+Blocks are Vue components located in `blocks/` subdirectories within a theme. Each block can optionally have:
 
-Example block structure:
-
-```
-blocks/
-  hero/
-    Hero.vue          # Block component
-    fields.ts         # Field definitions (optional)
-```
+- `fields.ts` - Field definitions for the block editor
+- `thumbnail.png` - Preview image for the block browser
 
 ### Layouts
 
-Layouts are Vue components in the `layout/` directory that define page templates.
+Layouts are Vue components in the `layout/` directory that define page templates. Partials can be used for reusable header/footer components.
 
-Example layouts:
+### Theme Configuration
 
-- `default.vue` - Default page layout
-- `marketing.vue` - Marketing page layout
+Each theme has a `theme.config.js` file that defines theme metadata like name, description, and available layouts.
 
 ## Usage Example
 
