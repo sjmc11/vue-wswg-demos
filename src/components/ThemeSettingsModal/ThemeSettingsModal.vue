@@ -112,10 +112,6 @@ import { editorApiStore } from "../../pinia/api";
 
 const apiStore = editorApiStore();
 
-// onMounted(() => {
-//    appTheme.value = editorApiStore.appTheme;
-// });
-
 const emit = defineEmits(["close", "save"]);
 
 const themeSearchQuery = ref("");
@@ -160,7 +156,7 @@ const computedThemeList = computed(() => {
 // Save changes handler
 async function saveChanges() {
    try {
-      apiStore.appTheme = selectedThemeId.value;
+      apiStore.appTheme = selectedThemeId.value ?? undefined;
       emit("close");
    } catch (error) {
       console.error("Error saving changes:", error);

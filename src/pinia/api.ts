@@ -13,7 +13,7 @@ export const editorApiStore = defineStore(
    () => {
       // State
       const pageData = ref<PageData>({} as PageData);
-      const appTheme = ref<string | null>(null);
+      const appTheme = ref<string | undefined>(undefined);
       const originalPageData = ref<PageData | null>(null);
       const isLoading = ref(false);
       const isSaving = ref(false);

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @source "../index.html";
 @source "./**/*.{vue,js,ts,jsx,tsx}";
 @source "../node_modules/vue-wswg-editor/src/**/*.{vue,js,ts,jsx,tsx}";
@@ -31,8 +30,8 @@ body {
 
 #page-viewport {
    width: 100%;
-   container-type: inline-size;
    container-name: page-viewport;
+   container-type: inline-size;
 }
 
 /* Container classes for page builder - max-width adjusts based on parent container width */
