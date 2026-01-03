@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
+import exampleData from "../../example-data";
 
 interface PageData {
    blocks?: any[];
@@ -41,21 +42,14 @@ export const editorApiStore = defineStore(
             // If we already have page data, return it (simulating cached data)
             if (pageData.value && !pageIdParam) {
                isLoading.value = false;
+               originalPageData.value = JSON.parse(JSON.stringify(pageData.value));
                return pageData.value;
             }
 
             // Generate or return mock page data
             const mockData: PageData = {
-               blocks: [],
-               settings: {
-                  layout: "default",
-                  title: "Untitled Page",
-                  slug: "untitled-page",
-                  meta: {
-                     description: "",
-                     keywords: [],
-                  },
-               },
+               blocks: exampleData.blocks,
+               settings: exampleData.settings,
                id: pageIdParam || `page-${Date.now()}`,
                createdAt: new Date().toISOString(),
                updatedAt: new Date().toISOString(),

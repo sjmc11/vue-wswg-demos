@@ -96,7 +96,11 @@
                {{ submitBtnText }}
             </button>
          </form>
-         <div v-else class="flex items-start gap-4 rounded-lg bg-gray-800 p-5">
+         <div
+            v-else
+            class="flex items-start gap-4 rounded-lg p-5"
+            :class="isDarkMode ? 'bg-gray-800 text-gray-400' : 'bg-gray-100 text-gray-900'"
+         >
             <HeroIcon name="check-circle" class="size-7 text-emerald-500" />
             <p>{{ confirmationMessage }}</p>
          </div>

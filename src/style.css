@@ -3,6 +3,8 @@
 @source "./**/*.{vue,js,ts,jsx,tsx}";
 @source "../node_modules/vue-wswg-editor/src/**/*.{vue,js,ts,jsx,tsx}";
 
+@import "vue-wswg-editor/style.css";
+
 :root {
    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
    font-weight: 400;

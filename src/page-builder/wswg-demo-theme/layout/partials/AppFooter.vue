@@ -2,7 +2,7 @@
    <footer class="bg-gray-100">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
          <div class="mb-6 flex justify-center text-teal-600">
-            <img :src="logo" alt="branding" class="h-12 w-auto" />
+            <img :src="logo" alt="branding" class="branding" />
          </div>
 
          <p v-if="footerDescription" class="mx-auto max-w-prose text-center leading-relaxed text-gray-500">
@@ -103,3 +103,10 @@ const hasFooterSocialLinks = computed(() => {
    return Object.values(props.footerSocialLinks || {}).some((link) => link !== "");
 });
 </script>
+
+<style lang="scss" scoped>
+.branding {
+   width: auto;
+   height: 3rem;
+}
+</style>

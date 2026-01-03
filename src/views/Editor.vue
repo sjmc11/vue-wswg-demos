@@ -70,6 +70,7 @@ const apiStore = editorApiStore();
 const isEditing = ref(true);
 const showSaveChangesModal = ref(false);
 const showThemeSettingsModal = ref(false);
+
 // Load page data on mount
 onMounted(async () => {
    try {
