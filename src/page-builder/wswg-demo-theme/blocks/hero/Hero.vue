@@ -1,6 +1,6 @@
 <template>
    <section class="lg:grid lg:place-content-center" :class="isDarkMode ? 'bg-gray-900' : 'bg-white'">
-      <div class="page-container @sm:py-24 @lg:py-24 @py-16 items-center">
+      <div class="page-container items-center py-16 sm:py-24 lg:py-24">
          <div
             class="mx-auto max-w-prose"
             :class="{
