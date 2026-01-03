@@ -13,8 +13,8 @@ export const editorApiStore = defineStore(
    "editorApi",
    () => {
       // State
-      const pageData = ref<PageData>({} as PageData);
-      const appTheme = ref<string | undefined>(undefined);
+      const pageData = ref<PageData>(exampleData as PageData);
+      const appTheme = ref<string | undefined>("wswg-demo-theme");
       const originalPageData = ref<PageData | null>(null);
       const isLoading = ref(false);
       const isSaving = ref(false);
