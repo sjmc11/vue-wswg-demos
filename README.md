@@ -4,11 +4,11 @@ This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 Ty
 
 <div align="center">
   <p>
-    <a href="https://stackblitz.com/~/github.com/sjmc11/vue-wswg-demos" style="display: inline-block; padding: 0.5rem 1rem; margin: 0.25rem; background-color: #2563eb; color: white; text-decoration: none; border-radius: 0.375rem; font-weight: 500; transition: background-color 0.2s;">Live demo</a>
-    <a href="https://github.com/sjmc11/vue-wswg-editor" style="display: inline-block; padding: 0.5rem 1rem; margin: 0.25rem; background-color: #2563eb; color: white; text-decoration: none; border-radius: 0.375rem; font-weight: 500; transition: background-color 0.2s;">Library</a>
-    
+    <a href="https://stackblitz.com/~/github.com/sjmc11/vue-wswg-demos"><img src="https://img.shields.io/badge/Live_Demo-StackBlitz-2563eb?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Live Demo"></a>
+    <a href="https://github.com/sjmc11/vue-wswg-editor"><img src="https://img.shields.io/badge/Library-GitHub-2563eb?style=for-the-badge&logo=github&logoColor=white" alt="Library"></a>
+    <a href="https://sjmc11.github.io/vue-wswg-editor/"><img src="https://img.shields.io/badge/Documentation-2563eb?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation"></a>
   </p>
-  <img src="https://raw.githubusercontent.com/sjmc11/vue-wswg-editor/main/docs/assets/wswg-poster.jpg" alt="vue-wswg-editor hero" style="max-width: 100%; height: auto;">
+  <img src="https://raw.githubusercontent.com/sjmc11/vue-wswg-editor/main/docs/assets/wswg-poster.jpg" alt="vue-wswg-editor hero">
 </div>
 
 ## Purpose
