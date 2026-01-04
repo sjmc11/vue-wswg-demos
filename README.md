@@ -2,7 +2,11 @@
 
 This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 TypeScript project. It showcases the integration of the WSWG page builder editor, including the required Vite plugin configuration and the necessary project structure.
 
-See the [vue-wswg-editor library](https://github.com/sjmc11/vue-wswg-editor)
+See the [vue-wswg-editor](https://github.com/sjmc11/vue-wswg-editor) library.
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sjmc11/vue-wswg-editor/main/docs/assets/wswg-hero.jpg" alt="vue-wswg-editor hero" style="max-width: 100%; height: auto;">
+</div>
 
 ## Purpose
 
