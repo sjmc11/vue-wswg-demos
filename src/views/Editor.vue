@@ -3,7 +3,6 @@
       <header class="publishing-bar border-b border-gray-300 bg-white">
          <div class="inline-flex h-16 w-full items-center gap-2 px-5 py-1">
             <div class="branding mr-auto inline-flex items-center gap-3">
-               <img src="../assets/branding.png" alt="Branding" class="h-7" />
                <SettingsDropdown label="acme-inc.com" @menu-item-click="handleMenuItemClick" />
             </div>
 
