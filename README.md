@@ -2,6 +2,8 @@
 
 This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 TypeScript project. It showcases the integration of the WSWG page builder editor, including the required Vite plugin configuration and the necessary project structure.
 
+See the [vue-wswg-editor library](https://github.com/sjmc11/vue-wswg-editor)
+
 ## Purpose
 
 This demo project serves as a reference implementation for developers looking to integrate the `vue-wswg-editor` library into their Vue 3 applications. It includes:
