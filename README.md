@@ -4,7 +4,7 @@ This project demonstrates how to use the `vue-wswg-editor` library in a Vue 3 Ty
 
 <div align="center">
   <p>
-    <a href="https://stackblitz.com/~/github.com/sjmc11/vue-wswg-demos"><img src="https://img.shields.io/badge/Live_Demo-StackBlitz-2563eb?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Live Demo"></a>
+    <a href="https://stackblitz.com/github/sjmc11/vue-wswg-demos?embed=1&view=preview"><img src="https://img.shields.io/badge/Live_Demo-StackBlitz-2563eb?style=for-the-badge&logo=stackblitz&logoColor=white" alt="Live Demo"></a>
     <a href="https://github.com/sjmc11/vue-wswg-editor"><img src="https://img.shields.io/badge/Library-GitHub-2563eb?style=for-the-badge&logo=github&logoColor=white" alt="Library"></a>
     <a href="https://sjmc11.github.io/vue-wswg-editor/"><img src="https://img.shields.io/badge/Documentation-2563eb?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Documentation"></a>
   </p>
